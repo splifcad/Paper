@@ -51,6 +51,12 @@ case "$1" in
         fi
     )
     ;;
+    "t" | "test" | "testserver")
+    (
+        cd "$basedir"
+        scripts/testServer.sh
+    )
+    ;;
     "r" | "root")
         cd "$basedir"
     ;;
