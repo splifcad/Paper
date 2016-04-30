@@ -1,4 +1,4 @@
-From 2bce99d815e516c5ea740c9f161933d7f7f5bcdd Mon Sep 17 00:00:00 2001
+From a3092ca4d2f76ef79198b6011d380dadd4d5d601 Mon Sep 17 00:00:00 2001
 From: Aikar <aikar@aikar.co>
 Date: Mon, 28 Mar 2016 20:55:47 -0400
 Subject: [PATCH] MC Utils
@@ -7,10 +7,10 @@ Collection of utils to help reduce NMS diff
 
 diff --git a/src/main/java/net/minecraft/server/MCUtil.java b/src/main/java/net/minecraft/server/MCUtil.java
 new file mode 100644
-index 0000000..abe7e9f
+index 0000000..ffd3152
 --- /dev/null
 +++ b/src/main/java/net/minecraft/server/MCUtil.java
-@@ -0,0 +1,115 @@
+@@ -0,0 +1,119 @@
 +package net.minecraft.server;
 +
 +import org.bukkit.Location;
@@ -29,7 +29,7 @@ index 0000000..abe7e9f
 +     * @return
 +     */
 +    public static IChatBaseComponent cmpFromMessage(String str) {
-+        return IChatBaseComponent.ChatSerializer.a("{text:\"" + REPLACE_QUOTES.matcher(str).replaceAll("\\\"") + "\"}");
++        return IChatBaseComponent.ChatSerializer.a("{\"text\":\"" + REPLACE_QUOTES.matcher(str).replaceAll("\\\"") + "\"}");
 +    }
 +
 +    /**
@@ -120,6 +120,10 @@ index 0000000..abe7e9f
 +        return new Location(entity.getWorld().getWorld(), entity.locX, entity.locY, entity.locZ);
 +    }
 +
++    public static BlockPosition toBlockPosition(Location loc) {
++        return new BlockPosition(loc.getBlockX(), loc.getBlockY(), loc.getBlockZ());
++    }
++
 +    public static boolean isEdgeOfChunk(BlockPosition pos) {
 +        final int modX = pos.getX() & 15;
 +        final int modZ = pos.getZ() & 15;
@@ -127,5 +131,5 @@ index 0000000..abe7e9f
 +    }
 +}
 -- 
-2.8.0
+2.8.1
 

@@ -39,6 +39,8 @@ import BiomeMesa
 import BlockChest
 import BlockFalling
 import BlockFluids
+import BlockFurnace
+import BlockIceFrost
 import BlockPosition
 import BlockStateList
 import ChunkProviderFlat
@@ -47,20 +49,26 @@ import ChunkProviderHell
 import CommandAbstract
 import CommandScoreboard
 import CommandWhitelist
+import DataBits
 import DataConverterMaterialId
 import EULA
 import EntitySquid
+import EntityWaterAnimal
 import FileIOThread
 import ItemBlock
 import PacketPlayInResourcePackStatus
 import PacketPlayInUseEntity
 import PacketPlayOutPlayerListHeaderFooter
+import PacketPlayOutScoreboardTeam
 import PacketPlayOutTitle
 import PacketPlayOutUpdateTime
 import PathfinderAbstract
 import PathfinderGoalFloat
+import PathfinderWater
 import PersistentVillage
+import RemoteControlListener
 import TileEntityEnderChest
+import WorldProvider
 
 cd "$workdir/Spigot/Spigot-Server/"
 git add src -A
